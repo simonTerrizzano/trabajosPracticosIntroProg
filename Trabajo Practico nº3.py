@@ -49,6 +49,112 @@ potencia exponente.
 def potencia(base, exponente):
     return base ** exponente
 
+
+#-----------------------------------------------------------------------------------------
+# Ejercicio 4
+#-----------------------------------------------------------------------------------------
+
+
+"""
+
+Implemente un algoritmo en Python para calcular el perímetro de un
+rectángulo, conociendo su base y altura. Los datos se deben almacenar en
+variables, y el resultado se debe mostrar en pantalla.
+
+"""
+
+def perimetroRectangulo(base, altura):
+    return (base + altura) * 2
+
+#-----------------------------------------------------------------------------------------
+# Ejercicio 5
+#-----------------------------------------------------------------------------------------
+
+"""
+
+Implemente un algoritmo en Python para calcular el área de un rectángulo,
+conociendo su base y altura. Los datos se deben almacenar en variables, y el
+resultado se debe mostrar en pantalla.
+
+"""
+
+def areaRectangulo(base, altura):
+    return base * altura
+
+
+#-----------------------------------------------------------------------------------------
+# Ejercicio 6
+#-----------------------------------------------------------------------------------------
+
+"""
+
+Implemente un algoritmo que intercambie los valores entre dos variables a y
+b cualesquiera. Por ejemplo, si a = 10 y b = 5, luego de ejecutar el algoritmo, la
+variable a debería ser igual 5, y la variable b debería ser igual a 10.
+
+"""
+
+def cambiaValores(a,b):
+    aux=a
+    a=b
+    b=aux
+    return a,b
+
+#-----------------------------------------------------------------------------------------
+# Ejercicio 7
+#-----------------------------------------------------------------------------------------
+
+"""
+
+En Python es posible resolver el problema del intercambio de valores sin
+hacer uso de variables adicionales, mediante la sintaxis de asignación
+múltiple. Investigue de qué se trata dicha funcionalidad, y utilízela para
+resolver el ejercicio anterior sin utilizar variables auxiliares/adicionales.
+
+"""
+def cambiaValoresMultiple(a,b):
+    [a,b]=[b,a]
+    return a,b
+
+#-----------------------------------------------------------------------------------------
+# Ejercicio 8
+#-----------------------------------------------------------------------------------------
+
+
+"""
+
+Escriba un algoritmo que, conociendo las notas de los dos parciales de un
+alumno de la asignatura Introducción a la Programación, muestre en
+pantalla su promedio.
+
+"""
+
+def promedioNotas(nota1,nota2):
+    return (nota1+nota2)/2
+
+#-----------------------------------------------------------------------------------------
+# Ejercicio 9
+#-----------------------------------------------------------------------------------------
+
+
+"""
+
+Cree un script que, sabiendo cuántos pesos argentinos tiene una persona
+ahorrada en su cuenta (almacenando ese monto en una variable), muestre
+en pantalla los montos convertidos en dólares (U$1 = $80.5), reales ($R1 =
+$14.1), y euros (€1 = $69.5). La salida del programa debe tener el siguiente
+formato:
+Usted tiene $XXX pesos argentinos, los cuales se convierten en:
+- U$XXX dólares.
+- R$XXX reales.
+- €XXX euros.
+
+"""
+
+def convertirAhorros(ahorros):
+    return "Usted tiene ${} pesos argentinos, los cuales se convierten en: \n - U${} dólares. \n - R${} reales. \n - €{} euros.".format(ahorros,round(ahorros/80.5,2),round(ahorros/14.1,2),round(ahorros/69.5,2))
+
+
 #################################################
 # Funciones de Test
 #################################################
@@ -71,16 +177,56 @@ def testPotencia():
     assert potencia(2,5) == 32
     print('Pasó!')
 
+def testPerimetroRectangulo():
+    print('Testeando perimetroRectangulo()... ', end='')
+    assert perimetroRectangulo(10,2) == 24
+    assert perimetroRectangulo(2,5) == 14
+    print('Pasó!')
+
+def testAreaRectangulo():
+    print('Testeando areaRectangulo()... ', end='')
+    assert areaRectangulo(10,2) == 20
+    assert areaRectangulo(2,5) == 10
+    print('Pasó!')
+
+def testCambiaValores():
+    print('Testeando cambiaValores()... ', end='')
+    assert cambiaValores(10,2) == (2,10)
+    assert cambiaValores(2,5) == (5,2)
+    print('Pasó!')
+
+def testCambiaValoresMultiple():
+    print('Testeando cambiaValoresMultiple()... ', end='')
+    assert cambiaValoresMultiple(10,2) == (2,10)
+    assert cambiaValoresMultiple(2,5) == (5,2)
+    print('Pasó!')
+
+def testPromedioNotas():
+    print('Testeando promedioNotas()... ', end='')
+    assert promedioNotas(10,10) == 10
+    assert promedioNotas(7,5) == 6
+    print('Pasó!')
+
+def testConvertirAhorros():
+    print('Testeando convertirAhorros()... ', end='')
+    assert convertirAhorros(100) == "Usted tiene $100 pesos argentinos, los cuales se convierten en: \n - U$1.24 dólares. \n - R$7.09 reales. \n - €1.44 euros."
+    print('Pasó!')
+
 #################################################
 # testearTodo y main
 #################################################
 
 def testearTodo():
-    pass
     # comentá los tests que no querés correr!
     # testValorAbsoluto()
     # testCantidadLetras()
-    testPotencia()
+    # testPotencia()
+    # testPerimetroRectangulo()
+    # testAreaRectangulo()
+    # testCambiaValores()
+    # testCambiaValoresMultiple()
+    # testPromedioNotas()
+    testConvertirAhorros()
 
 def main():
     testearTodo()
