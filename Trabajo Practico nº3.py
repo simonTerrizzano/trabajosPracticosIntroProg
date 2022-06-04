@@ -218,14 +218,14 @@ def testConvertirAhorros():
 
 def testearTodo():
     # comentá los tests que no querés correr!
-    # testValorAbsoluto()
-    # testCantidadLetras()
-    # testPotencia()
-    # testPerimetroRectangulo()
-    # testAreaRectangulo()
-    # testCambiaValores()
-    # testCambiaValoresMultiple()
-    # testPromedioNotas()
+    testValorAbsoluto()
+    testCantidadLetras()
+    testPotencia()
+    testPerimetroRectangulo()
+    testAreaRectangulo()
+    testCambiaValores()
+    testCambiaValoresMultiple()
+    testPromedioNotas()
     testConvertirAhorros()
 
 def main():
